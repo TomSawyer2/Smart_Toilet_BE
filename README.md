@@ -55,4 +55,4 @@ jwt:
 
 ### 三、运行
 
-找到`BeeFarmingBeApplication.java`文件，点击`Run`即可
+找到`SmartToiletBeApplication.java`文件，点击`Run`即可
