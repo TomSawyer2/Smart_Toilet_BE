@@ -8,6 +8,8 @@ public enum ResultCode implements ErrorCode {
     PWD_ERR(3, "密码错误"),
     USER_BANNED(4, "当前用户已被封禁"),
     PERMISSION_DENIED(5, "权限不足"),
+    TOILET_NOT_EXIST(100, "厕所不存在"),
+    FEEDBACK_NOT_EXIST(200, "反馈不存在"),
     VALIDATE_FAILED(1001, "验证失败"),
     UNAUTHORIZED(1002, "未授权"),
     FORBIDDEN(1003, "Forbidden"),
