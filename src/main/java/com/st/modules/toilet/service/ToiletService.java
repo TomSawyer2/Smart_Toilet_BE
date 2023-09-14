@@ -6,12 +6,13 @@ import com.st.modules.toilet.dto.DeleteToiletDto;
 import com.st.modules.toilet.dto.RefreshAirDto;
 import com.st.modules.toilet.dto.UpdateToiletDto;
 import com.st.modules.toilet.model.Toilet;
+import com.st.modules.toilet.vo.GetToiletListVo;
 
 import java.util.List;
 
 public interface ToiletService extends IService<Toilet>  {
     void addToilet(AddToiletDto addToiletDto);
-    List<Toilet> getToiletList();
+    GetToiletListVo getToiletList();
     void deleteToilet(DeleteToiletDto deleteToiletDto);
     void updateToilet(UpdateToiletDto updateToiletDto);
     void refreshAir(RefreshAirDto refreshAirDto);
