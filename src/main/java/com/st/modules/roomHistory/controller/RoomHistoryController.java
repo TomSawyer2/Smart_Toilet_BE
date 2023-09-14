@@ -16,7 +16,7 @@ public class RoomHistoryController {
     RoomHistoryService roomHistoryService;
 
     @GetMapping("/history")
-    public CommonResult getRoomHistory(@RequestParam("roomDbId") Integer roomDbId) {
-        return CommonResult.success(roomHistoryService.getRoomHistory(roomDbId), "坑位历史数据获取成功");
+    public CommonResult getRoomHistory(@RequestParam("roomDbId") Integer roomDbId, @RequestParam("page") Integer page, @RequestParam("pageSize") Integer pageSize) {
+        return CommonResult.success(roomHistoryService.getRoomHistory(roomDbId, page, pageSize), "坑位历史数据获取成功");
     }
 }

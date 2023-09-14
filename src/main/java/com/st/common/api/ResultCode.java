@@ -16,7 +16,8 @@ public enum ResultCode implements ErrorCode {
     VALIDATE_FAILED(1001, "验证失败"),
     UNAUTHORIZED(1002, "未授权"),
     FORBIDDEN(1003, "Forbidden"),
-    TOKEN_MISSING(1004, "未检测到token");
+    TOKEN_MISSING(1004, "未检测到token"),
+    CANNOT_UPDATE_SELF_PERMISSION(1005, "不能修改自己的权限");
 
     private final Integer code;
     private final String message;

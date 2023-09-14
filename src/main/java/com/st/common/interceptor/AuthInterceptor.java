@@ -75,22 +75,12 @@ public class AuthInterceptor implements HandlerInterceptor {
 
     private boolean auth(Permission[] permissions, Integer id) {
         User user = userMapper.selectById(id);
-        for (Permission p : permissions) {
-            if (p == Permission.ADMIN) {
-                if (user != null && user.getPermission() == Permission.ADMIN.getCode()) {
-                    currentUser.set(user);
-                    return true;
-                }
-                else break;
-            } else if (p == Permission.USER) {
-                if (user != null && (user.getPermission() == Permission.USER.getCode() || user.getPermission() == Permission.ADMIN.getCode())) {
-                    currentUser.set(user);
-                    return true;
-                }
-                else break;
+        currentUser.set(user);
+        for (Permission permission : permissions) {
+            if (user.getPermission().equals(permission.getCode())) {
+                return true;
             }
         }
         return false;
-
     }
 }

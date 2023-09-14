@@ -18,10 +18,10 @@ public class ToiletHistoryController {
 
     @GetMapping("/history")
     @LoginRequired(needPermission = Permission.ADMIN)
-    public CommonResult getToiletHistory(@RequestParam("toiletId") Integer toiletId) {
+    public CommonResult getToiletHistory(@RequestParam("toiletId") Integer toiletId, @RequestParam("page") Integer page, @RequestParam("pageSize") Integer pageSize) {
         if (toiletId == null) {
             return CommonResult.failed("参数错误");
         }
-        return CommonResult.success(toiletHistoryService.getToiletHistory(toiletId), "获取厕所历史数据成功");
+        return CommonResult.success(toiletHistoryService.getToiletHistory(toiletId, page, pageSize), "获取厕所历史数据成功");
     }
 }
