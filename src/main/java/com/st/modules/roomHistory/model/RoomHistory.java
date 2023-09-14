@@ -22,5 +22,7 @@ public class RoomHistory {
 
     private Integer status;
 
+    private Integer roomDbId;
+
     private java.util.Date updateTime;
 }
