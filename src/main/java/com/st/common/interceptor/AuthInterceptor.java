@@ -77,7 +77,7 @@ public class AuthInterceptor implements HandlerInterceptor {
         User user = userMapper.selectById(id);
         currentUser.set(user);
         for (Permission permission : permissions) {
-            if (user.getPermission().equals(permission.getCode())) {
+            if (permission.getCode() <= user.getPermission()) {
                 return true;
             }
         }

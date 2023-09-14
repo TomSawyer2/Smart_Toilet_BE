@@ -18,6 +18,8 @@ public class Feedback {
 
     private Integer roomId;
 
+    private Integer roomDbId;
+
     private String content;
 
     private java.util.Date updateTime;
