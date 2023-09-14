@@ -22,7 +22,6 @@ public class RoomHistoryServiceImpl extends ServiceImpl<RoomHistoryMapper, RoomH
         Page<RoomHistory> roomHistoryPage = new Page<>(page, pageSize);
         QueryWrapper<RoomHistory> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("room_db_id", roomDbId);
-        queryWrapper.orderByDesc("id");
         roomHistoryMapper.selectPage(roomHistoryPage, queryWrapper);
         List<RoomHistory> list = roomHistoryPage.getRecords();
         GetRoomHistoryVo res = new GetRoomHistoryVo();

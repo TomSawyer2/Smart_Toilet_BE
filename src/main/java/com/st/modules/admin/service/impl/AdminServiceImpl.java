@@ -36,7 +36,6 @@ public class AdminServiceImpl implements AdminService {
     public GetFeedbackListVo getFeedbackList(int page, int pageSize) {
         Page<Feedback> feedbackPage = new Page<>(page, pageSize);
         QueryWrapper<Feedback> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByDesc("id");
         feedbackMapper.selectPage(feedbackPage, queryWrapper);
         List<Feedback> codes = feedbackPage.getRecords();
         GetFeedbackListVo res = new GetFeedbackListVo();
@@ -51,7 +50,6 @@ public class AdminServiceImpl implements AdminService {
     public GetDeviceListVo getDeviceList(int page, int pageSize) {
         Page<Device> devicePage = new Page<>(page, pageSize);
         QueryWrapper<Device> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByDesc("id");
         deviceMapper.selectPage(devicePage, queryWrapper);
         List<Device> codes = devicePage.getRecords();
         GetDeviceListVo res = new GetDeviceListVo();
@@ -66,7 +64,6 @@ public class AdminServiceImpl implements AdminService {
     public GetUserListVo getUserList(int page, int pageSize) {
         Page<User> userPage = new Page<>(page, pageSize);
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByDesc("id");
         userMapper.selectPage(userPage, queryWrapper);
         List<User> codes = userPage.getRecords();
         GetUserListVo res = new GetUserListVo();

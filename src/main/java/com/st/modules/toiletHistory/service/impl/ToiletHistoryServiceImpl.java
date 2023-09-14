@@ -22,7 +22,6 @@ public class ToiletHistoryServiceImpl extends ServiceImpl<ToiletHistoryMapper, T
         Page<ToiletHistory> toiletHistoryPage = new Page<>(page, pageSize);
         QueryWrapper<ToiletHistory> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("toilet_id", toiletId);
-        queryWrapper.orderByDesc("id");
         toiletHistoryMapper.selectPage(toiletHistoryPage, queryWrapper);
         List<ToiletHistory> list = toiletHistoryPage.getRecords();
         GetToiletHistoryVo res = new GetToiletHistoryVo();
