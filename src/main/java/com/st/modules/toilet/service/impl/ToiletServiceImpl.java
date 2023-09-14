@@ -21,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -44,19 +45,21 @@ public class ToiletServiceImpl extends ServiceImpl<ToiletMapper, Toilet> impleme
     }
 
     @Override
-    public GetToiletListVo getToiletList() {
+    public List<GetToiletListVo> getToiletList() {
         // 对于toiletMapper中的每一项，都去roomMapper中查找toilet_id与其相同的项，然后将这一项加入到GetToiletListVo中
         List<Toilet> toiletList = toiletMapper.selectList(null);
-        GetToiletListVo getToiletListVo = new GetToiletListVo();
+        List<GetToiletListVo> res = new ArrayList<>();
         for (Toilet toilet : toiletList) {
+            GetToiletListVo getToiletListVo = new GetToiletListVo();
             // 1. 先将toilet的信息加入到getToiletListVo中
             BeanUtils.copyProperties(toilet, getToiletListVo);
             // 2. 再将room的信息加入到getToiletListVo中
             QueryWrapper<Room> queryWrapper = new QueryWrapper<>();
             queryWrapper.eq("toilet_id", toilet.getId());
             getToiletListVo.setRoomList(roomMapper.selectList(queryWrapper));
+            res.add(getToiletListVo);
         }
-        return getToiletListVo;
+        return res;
     }
 
     @Override

@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface ToiletService extends IService<Toilet>  {
     void addToilet(AddToiletDto addToiletDto);
-    GetToiletListVo getToiletList();
+    List<GetToiletListVo> getToiletList();
     void deleteToilet(DeleteToiletDto deleteToiletDto);
     void updateToilet(UpdateToiletDto updateToiletDto);
     void refreshAir(RefreshAirDto refreshAirDto);
