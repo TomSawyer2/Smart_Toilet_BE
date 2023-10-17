@@ -10,8 +10,8 @@ import com.st.modules.admin.service.AdminService;
 import com.st.modules.admin.vo.GetDeviceListVo;
 import com.st.modules.admin.vo.GetFeedbackListVo;
 import com.st.modules.admin.vo.GetUserListVo;
-import com.st.modules.device.mapper.DeviceMapper;
-import com.st.modules.device.model.Device;
+import com.st.modules.deviceData.mapper.DeviceDataMapper;
+import com.st.modules.deviceData.model.DeviceData;
 import com.st.modules.feedback.mapper.FeedbackMapper;
 import com.st.modules.feedback.model.Feedback;
 import com.st.modules.user.mapper.UserMapper;
@@ -27,7 +27,7 @@ public class AdminServiceImpl implements AdminService {
     FeedbackMapper feedbackMapper;
 
     @Autowired
-    DeviceMapper deviceMapper;
+    DeviceDataMapper deviceDataMapper;
 
     @Autowired
     UserMapper userMapper;
@@ -48,10 +48,10 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public GetDeviceListVo getDeviceList(int page, int pageSize) {
-        Page<Device> devicePage = new Page<>(page, pageSize);
-        QueryWrapper<Device> queryWrapper = new QueryWrapper<>();
-        deviceMapper.selectPage(devicePage, queryWrapper);
-        List<Device> codes = devicePage.getRecords();
+        Page<DeviceData> devicePage = new Page<>(page, pageSize);
+        QueryWrapper<DeviceData> queryWrapper = new QueryWrapper<>();
+        deviceDataMapper.selectPage(devicePage, queryWrapper);
+        List<DeviceData> codes = devicePage.getRecords();
         GetDeviceListVo res = new GetDeviceListVo();
         res.setPage(page);
         res.setPageSize(pageSize);

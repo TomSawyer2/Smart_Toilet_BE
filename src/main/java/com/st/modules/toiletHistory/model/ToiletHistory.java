@@ -24,5 +24,7 @@ public class ToiletHistory {
 
     private Float airStatus;
 
+    private Integer fanStatus;
+
     private java.util.Date updateTime;
 }

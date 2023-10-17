@@ -22,13 +22,9 @@ public class Toilet {
 
     private Float airStatus;
 
-    private String tempSensorSn;
+    private Integer fanStatus;
 
-    private String airSensorSn;
-
-    private String fanSn;
-
-    private String loraSn;
+    private String sn;
 
     private java.util.Date updateTime;
 }

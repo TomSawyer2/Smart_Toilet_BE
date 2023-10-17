@@ -1,4 +1,4 @@
-package com.st.modules.device.model;
+package com.st.modules.deviceData.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("device_data")
-public class Device {
+public class DeviceData {
     @TableId(value = "id", type = IdType.AUTO)
 
     private Integer id;

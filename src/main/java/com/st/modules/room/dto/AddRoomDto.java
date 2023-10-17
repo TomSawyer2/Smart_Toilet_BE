@@ -16,5 +16,5 @@ public class AddRoomDto {
     @NotBlank
     private Integer toiletId;
 
-    private String occupiedSensorSn;
+    private String sn;
 }

@@ -80,8 +80,8 @@ public class ToiletServiceImpl extends ServiceImpl<ToiletMapper, Toilet> impleme
         if (toiletDB == null) {
             Asserts.fail(ResultCode.TOILET_NOT_EXIST);
         } else {
-            // 1. 如果有厕所，先将之前的信息保存一份到toilet_history中，如果temperature、humidity、airStatus不为null，才保存
-            if (updateToiletDto.getTemperature() == null && updateToiletDto.getHumidity() == null && updateToiletDto.getAirStatus() == null) {
+            // 1. 如果有厕所，先将之前的信息保存一份到toilet_history中，如果temperature、humidity、airStatus、fanStatus不为null，才保存
+            if (updateToiletDto.getTemperature() == null && updateToiletDto.getHumidity() == null && updateToiletDto.getAirStatus() == null && updateToiletDto.getFanStatus() == null) {
                 // 如果没有变化，不保存
             } else {
                 ToiletHistory toiletHistory = new ToiletHistory();
@@ -90,6 +90,7 @@ public class ToiletServiceImpl extends ServiceImpl<ToiletMapper, Toilet> impleme
                 toiletHistory.setHumidity(updateToiletDto.getHumidity());
                 toiletHistory.setTemperature(updateToiletDto.getTemperature());
                 toiletHistory.setAirStatus(updateToiletDto.getAirStatus());
+                toiletHistory.setFanStatus(updateToiletDto.getFanStatus());
                 toiletHistory.setName(updateToiletDto.getName());
                 toiletHistoryMapper.insert(toiletHistory);
             }

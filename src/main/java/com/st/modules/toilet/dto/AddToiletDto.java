@@ -13,11 +13,5 @@ public class AddToiletDto {
     @NotBlank
     private String name;
 
-    private String tempSensorSn;
-
-    private String airSensorSn;
-
-    private String fanSn;
-
-    private String loraSn;
+    private String sn;
 }

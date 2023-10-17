@@ -22,7 +22,7 @@ public class Room {
 
     private Integer status;
 
-    private String occupiedSensorSn;
+    private String sn;
 
     private java.util.Date updateTime;
 }

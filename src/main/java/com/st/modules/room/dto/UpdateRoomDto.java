@@ -17,5 +17,5 @@ public class UpdateRoomDto {
 
     private Integer status;
 
-    private String occupiedSensorSn;
+    private String sn;
 }

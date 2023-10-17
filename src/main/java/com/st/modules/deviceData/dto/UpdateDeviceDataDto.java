@@ -1,11 +1,11 @@
-package com.st.modules.device.dto;
+package com.st.modules.deviceData.dto;
 
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 
 @Data
-public class UpdateDeviceDto {
+public class UpdateDeviceDataDto {
     @NotBlank
     private String sn;
 

@@ -1,11 +1,11 @@
-package com.st.modules.device.mapper;
+package com.st.modules.deviceData.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.st.modules.device.model.Device;
+import com.st.modules.deviceData.model.DeviceData;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 @Mapper
 @Repository
-public interface DeviceMapper extends BaseMapper<Device>  {
+public interface DeviceDataMapper extends BaseMapper<DeviceData>  {
 }

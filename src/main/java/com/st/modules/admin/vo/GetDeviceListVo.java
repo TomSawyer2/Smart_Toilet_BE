@@ -1,6 +1,6 @@
 package com.st.modules.admin.vo;
 
-import com.st.modules.device.model.Device;
+import com.st.modules.deviceData.model.DeviceData;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -18,5 +18,5 @@ public class GetDeviceListVo {
     private Integer total;
 
     @NotBlank
-    private List<Device> list;
+    private List<DeviceData> list;
 }
