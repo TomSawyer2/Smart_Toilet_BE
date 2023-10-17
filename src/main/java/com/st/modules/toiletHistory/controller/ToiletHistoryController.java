@@ -17,7 +17,7 @@ public class ToiletHistoryController {
     ToiletHistoryService toiletHistoryService;
 
     @GetMapping("/history")
-    @LoginRequired(needPermission = Permission.ADMIN)
+//    @LoginRequired(needPermission = Permission.ADMIN)
     public CommonResult getToiletHistory(@RequestParam("toiletId") Integer toiletId, @RequestParam("page") Integer page, @RequestParam("pageSize") Integer pageSize) {
         if (toiletId == null) {
             return CommonResult.failed("参数错误");
