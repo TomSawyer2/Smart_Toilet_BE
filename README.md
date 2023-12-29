@@ -2,7 +2,7 @@
 
 ## Intro
 
-智能公厕的后端
+智能公厕系统的后端
 
 **框架**： Springboot + Mybatis-Plus
 
@@ -33,7 +33,7 @@ spring:
     name: SmartToilet_BE
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    name: bee_farming
+    name: smart_toilet
     url: jdbc:mysql://${ip}:${port}/${dbName}?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: ${username}
     password: "${password}"
