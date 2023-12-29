@@ -10,7 +10,7 @@
 
 ### 〇、环境配置
 
-项目JAVA版本统一采用JDK17，IDE采用IDEA
+项目JAVA版本统一采用JDK17，IDE采用IDEA，数据库结构文件在`/src/main/resources/sql`下。
 
 ### 一、依赖安装
 
